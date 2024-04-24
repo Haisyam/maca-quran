@@ -52,7 +52,7 @@ function JuzAmma({ allSurahList }) {
 export default JuzAmma;
 
 export async function getStaticProps() {
-  const res = await fetch("https://api.quran.sutanlab.id/surah/");
+  const res = await fetch("https://api.quran.gading.dev/surah/");
   const resultJson = await res.json();
 
   const allSurahList = resultJson.data.filter((surah) => surah.number >= 78);

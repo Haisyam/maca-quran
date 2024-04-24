@@ -327,7 +327,7 @@ function Surah({ surah, prevSurah, nextSurah }) {
 export default Surah;
 
 export async function getStaticPaths() {
-  const response = await fetch(`https://api.quran.sutanlab.id/surah/`);
+  const response = await fetch(`https://api.quran.gading.dev/surah/`);
   const resultJson = await response.json();
   const surahList = resultJson.data;
 
@@ -348,9 +348,9 @@ export async function getStaticProps({ params }) {
   };
 
   const results = await Promise.all([
-    fetchData(`https://api.quran.sutanlab.id/surah/${id}`),
-    fetchData(`https://api.quran.sutanlab.id/surah/${Number(id) - 1}`),
-    fetchData(`https://api.quran.sutanlab.id/surah/${Number(id) + 1}`),
+    fetchData(`https://api.quran.gading.dev/surah/${id}`),
+    fetchData(`https://api.quran.gading.dev/surah/${Number(id) - 1}`),
+    fetchData(`https://api.quran.gading.dev/surah/${Number(id) + 1}`),
   ]);
 
   const [surah, prevSurah, nextSurah] = results;
